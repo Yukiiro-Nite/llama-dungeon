@@ -1,30 +1,8 @@
 #root {
-  max-width: 1280px;
+  max-width: 40rem;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -33,10 +11,35 @@
   }
 }
 
-.card {
-  padding: 2em;
+.StartButton {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-in;
 }
 
-.read-the-docs {
-  color: #888;
+.StartButton.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.LoadingIndicator {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-in;
+}
+
+.LoadingIndicator.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.GameView {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-in;
+}
+
+.GameView.show {
+  opacity: 1;
+  pointer-events: all;
 }

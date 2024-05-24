@@ -26,7 +26,7 @@ export type GameState = Record<string, string | number>
 
 export interface GameOption {
   description: string
-  gameState: GameState
+  stateUpdate: GameState
 }
 
 export interface GameResponse {

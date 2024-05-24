@@ -34,8 +34,9 @@ function App() {
   const handleOption = useCallback((option: GameOption) => {
     const newItem = { role: 'user', content: JSON.stringify(option) } as ChatMessage
     const newHistory = [newItem].concat(history)
-    const newGameState = mergeGameStates([gameState, option.gameState])
+    const newGameState = mergeGameStates([gameState, option.stateUpdate])
 
+    setExploreRequest({ loading: true, data: exploreRequest.data })
     explore(DEFAULT_PROMPT, newHistory, newGameState)
       .then((gameResponse) => {
         console.log('Got response after picking option: ', gameResponse)
