@@ -1,0 +1,32 @@
+.StartButton {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-in;
+}
+
+.StartButton.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.LoadingIndicator {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-in;
+}
+
+.LoadingIndicator.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.GameView {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-in;
+}
+
+.GameView.show {
+  opacity: 1;
+  pointer-events: all;
+}

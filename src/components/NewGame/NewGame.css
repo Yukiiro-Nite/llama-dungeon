@@ -1,0 +1,24 @@
+.NewGame form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.NewGame form label span {
+  display: block;
+  font-weight: bold;
+}
+
+.NewGame form label p {
+  font-size: 0.75rem;
+  margin: 0;
+  max-width: 30rem;
+}
+
+.NewGame form button {
+  margin-top: 1.5rem;
+}
+
+.NewGame form textarea {
+  max-width: 30rem;
+  width: 100%;
+}

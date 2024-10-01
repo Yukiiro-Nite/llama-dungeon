@@ -1,5 +1,3 @@
-import { keyReplace } from "../utils/stringUtils"
-
 export interface ChatMessage {
   role: 'system' | 'assistant' | 'user',
   content: string
@@ -24,14 +22,14 @@ export interface LLamaResponse {
 
 export type GameState = Record<string, string | number>
 
-export interface GameOption {
+export interface GameResponseOption {
   description: string
   stateUpdate: GameState
 }
 
 export interface GameResponse {
   scene: string
-  options: GameOption[]
+  options: GameResponseOption[]
 }
 
 export interface ResponseError {
@@ -41,13 +39,11 @@ export interface ResponseError {
 
 export const explore = async (
   prompt: string,
-  history: ChatMessage[],
-  gameState: GameState
+  history: ChatMessage[]
 ): Promise<GameResponse> => {
-  const updatedPrompt = keyReplace(prompt, { gameState: JSON.stringify(gameState) })
   const systemMessage = {
     role: 'system',
-    content: updatedPrompt
+    content: prompt
   }
   const recentHistory = history.slice(0, 10).reverse()
   const messages = [systemMessage].concat(recentHistory)
